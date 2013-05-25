@@ -4,16 +4,17 @@ Doctrine Functions
 This package contains doctrine functions, you can contribute by forking it and propose pull request with your own functions.
 By defaults it add these:
 
-* `DATE()`
-* `DAYOFWEEK()`
-* `DAYOFMONTH()`
-* `DAYOFYEAR()`
-* `HOUR()`
-* `MINUTE()`
-* `MONTH()`
-* `SECOND()`
-* `TIME()`
-* `YEAR()`
+* `DATE(expr)`
+* `DATEDIFF(expr1, expr2)`
+* `DAYOFWEEK(expr)`
+* `DAYOFMONTH(expr)`
+* `DAYOFYEAR(expr)`
+* `HOUR(expr)`
+* `MINUTE(expr)`
+* `MONTH(expr)`
+* `SECOND(expr)`
+* `TIME(expr)`
+* `YEAR(expr)`
 
 Edit this file in your pull request to add your function to the list.
 
