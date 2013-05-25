@@ -18,6 +18,19 @@ By defaults it add these:
 
 Edit this file in your pull request to add your function to the list.
 
+Installation
+------------
+
+Just add the package to your `composer.json`
+
+```json
+{
+    "require": {
+        "luxifer/doctrine-functions": "dev-master"
+    }
+}
+```
+
 Integration
 -----------
 
