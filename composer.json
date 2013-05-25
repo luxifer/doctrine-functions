@@ -20,5 +20,6 @@
         "psr-0": {
             "Luxifer\\DQL\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
