@@ -6,7 +6,14 @@ By defaults it add these:
 
 * `DATE()`
 * `DAYOFWEEK()`
+* `DAYOFMONTH()`
+* `DAYOFYEAR()`
 * `HOUR()`
+* `MINUTE()`
+* `MONTH()`
+* `SECOND()`
+* `TIME()`
+* `YEAR()`
 
 Edit this file in your pull request to add your function to the list.
 
