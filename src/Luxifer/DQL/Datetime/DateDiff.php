@@ -21,7 +21,7 @@ class DateDiff extends FunctionNode
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
         $this->firstDateExpression = $parser->ArithmeticPrimary();
-        $parser->match(Lexer::T_COMMA)
+        $parser->match(Lexer::T_COMMA);
         $this->secondDateExpression = $parser->ArithmeticPrimary();
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
