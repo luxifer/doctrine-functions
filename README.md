@@ -38,3 +38,8 @@ doctrine:
                     datetime_functions:
                         date: Luxifer\DQL\Datetime\Date
 ```
+
+TODO
+----
+
+* Add test case
