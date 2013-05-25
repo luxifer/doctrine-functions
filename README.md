@@ -25,7 +25,7 @@ $config->addCustomDatetimeFunction('date', 'Luxifer\DQL\Datetime\Date');
 $em = EntityManager::create($dbParams, $config);
 ```
 
-### Using Symfony 2
+### 2) Using Symfony 2
 
 With symfony 2 you can register yout functions directly in the `config.yml` file.
 
