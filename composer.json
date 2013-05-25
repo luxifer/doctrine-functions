@@ -3,6 +3,7 @@
     "type": "library",
     "version": "1.0.0-dev",
     "description": "Doctrine DQL Functions for Mysql",
+    "homepage": "http://luxifer.github.io/doctrine-functions/",
     "keywords": ["database", "mysql", "dql"],
     "license": "MIT",
     "authors": [
