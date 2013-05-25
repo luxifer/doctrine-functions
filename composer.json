@@ -1,6 +1,7 @@
 {
     "name": "luxifer/doctrine-functions",
     "type": "library",
+    "version": "1.0.0-dev",
     "description": "Doctrine DQL Functions for Mysql",
     "keywords": ["database", "mysql", "dql"],
     "license": "MIT",
