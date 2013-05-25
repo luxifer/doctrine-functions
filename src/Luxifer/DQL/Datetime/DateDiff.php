@@ -11,7 +11,7 @@ use Doctrine\ORM\Query\SqlWalker;
  * DateFunction ::= "DATEDIFF" "(" ArithmeticPrimary "," ArithmeticPrimary ")"
  * @author Florent Viel <fviel@wanadev.fr>
  */
-class Year extends FunctionNode
+class DateDiff extends FunctionNode
 {
     public $firstDateExpression;
     public $secondDateExpression;
