@@ -19,6 +19,8 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 
         $conn = \Doctrine\DBAL\DriverManager::getConnection($conn, $this->config);
 
+        $this->config->setProxyDir(__DIR__ . '/Proxies');
+        $this->config->setProxyNamespace('Luxifer\Tests\Proxies');
         $this->config->addCustomDatetimeFunction('date', 'Luxifer\DQL\Datetime\Date');
         $this->config->addCustomDatetimeFunction('datediff', 'Luxifer\DQL\Datetime\DateDiff');
         $this->config->addCustomDatetimeFunction('dayofmonth', 'Luxifer\DQL\Datetime\DayOfMonth');
