@@ -63,4 +63,4 @@ doctrine:
 TODO
 ----
 
-* Add test case
+* Add test case using phpspec
