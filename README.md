@@ -49,7 +49,7 @@ $em = EntityManager::create($dbParams, $config);
 
 ### 2) Using Symfony 2
 
-With symfony 2 you can register yout functions directly in the `config.yml` file.
+With Symfony 2 you can register your functions directly in the `config.yml` file.
 
 ```yaml
 doctrine:
