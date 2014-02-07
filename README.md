@@ -12,6 +12,7 @@ List of available functions:
 * `HOUR(expr)`
 * `MINUTE(expr)`
 * `MONTH(expr)`
+* `QUARTER(expr)`
 * `SECOND(expr)`
 * `TIME(expr)`
 * `YEAR(expr)`
