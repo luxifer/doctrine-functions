@@ -8,10 +8,9 @@ use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\SqlWalker;
 
 /**
- * DateFunction ::= "MONTH" "(" ArithmeticPrimary ")"
- * @author Florent Viel <fviel@wanadev.fr>
+ * DateFunction ::= "QUARTER" "(" ArithmeticPrimary ")"
  */
-class Month extends FunctionNode
+class Quarter extends FunctionNode
 {
     public $dateExpression;
 
@@ -25,7 +24,7 @@ class Month extends FunctionNode
 
     public function getSql(SqlWalker $sqlWalker)
     {
-        return 'MONTH(' .
+        return 'QUARTER(' .
             $this->dateExpression->dispatch($sqlWalker) .
         ')';
     }
