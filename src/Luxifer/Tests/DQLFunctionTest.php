@@ -6,7 +6,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 {
     protected $config;
 
-    protected function _getEntityManager()
+    protected function getEntityManager()
     {
         $this->config = new \Doctrine\ORM\Configuration();
 
@@ -29,6 +29,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config->addCustomDatetimeFunction('hour', 'Luxifer\DQL\Datetime\Hour');
         $this->config->addCustomDatetimeFunction('minute', 'Luxifer\DQL\Datetime\Minute');
         $this->config->addCustomDatetimeFunction('month', 'Luxifer\DQL\Datetime\Month');
+        $this->config->addCustomDatetimeFunction('quarter', 'Luxifer\DQL\Datetime\Quarter');
         $this->config->addCustomDatetimeFunction('second', 'Luxifer\DQL\Datetime\Second');
         $this->config->addCustomDatetimeFunction('time', 'Luxifer\DQL\Datetime\Time');
         $this->config->addCustomDatetimeFunction('year', 'Luxifer\DQL\Datetime\Year');
