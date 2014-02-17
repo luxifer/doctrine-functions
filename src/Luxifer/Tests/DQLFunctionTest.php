@@ -23,7 +23,9 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config->setProxyNamespace('Luxifer\Tests\Proxies');
         $this->config->addCustomDatetimeFunction('date', 'Luxifer\DQL\Datetime\Date');
         $this->config->addCustomDatetimeFunction('datediff', 'Luxifer\DQL\Datetime\DateDiff');
+        $this->config->addCustomDatetimeFunction('day', 'Luxifer\DQL\Datetime\Day');
         $this->config->addCustomDatetimeFunction('dayofmonth', 'Luxifer\DQL\Datetime\DayOfMonth');
+        $this->config->addCustomDatetimeFunction('week', 'Luxifer\DQL\Datetime\Week');
         $this->config->addCustomDatetimeFunction('dayofweek', 'Luxifer\DQL\Datetime\DayOfWeek');
         $this->config->addCustomDatetimeFunction('dayofyear', 'Luxifer\DQL\Datetime\DayOfYear');
         $this->config->addCustomDatetimeFunction('hour', 'Luxifer\DQL\Datetime\Hour');
