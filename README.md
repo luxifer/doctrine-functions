@@ -7,6 +7,8 @@ List of available functions:
 * `DATE(expr)`
 * `DATEDIFF(expr1, expr2)`
 * `DAYOFWEEK(expr)`
+* `WEEK(expr)`
+* `DAY(expr)`
 * `DAYOFMONTH(expr)`
 * `DAYOFYEAR(expr)`
 * `HOUR(expr)`
@@ -58,7 +60,9 @@ doctrine:
             default:
                 dql:
                     datetime_functions:
-                        date: Luxifer\DQL\Datetime\Date
+                        date:     Luxifer\DQL\Datetime\Date
+                        datediff: Luxifer\DQL\Datetime\DateDiff
+                        # etc
 ```
 
 TODO
