@@ -18,6 +18,7 @@ List of available functions:
 * `SECOND(expr)`
 * `TIME(expr)`
 * `YEAR(expr)`
+* `CONVERT_TZ(expr, 'from_tz', 'to_tz')` (MySQL implementation ONLY)
 
 Edit this file in your pull request to add your functions to the list.
 
