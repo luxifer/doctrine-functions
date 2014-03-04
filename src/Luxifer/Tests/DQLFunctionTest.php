@@ -15,7 +15,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->em = $this->getEntityManagerMock();
+        $this->em = $this->getEntityManagerInstanceMock();
     }
 
     public function tearDown()
@@ -25,10 +25,11 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Just for internal use, could be overridden in child classes
+     * User $em property in case if you need EntityManager
      *
      * @return \Doctrine\ORM\EntityManager|\Doctrine\Tests\Mocks\EntityManagerMock
      */
-    protected function getEntityManagerMock()
+    protected function getEntityManagerInstanceMock()
     {
         $this->config = Setup::createAnnotationMetadataConfiguration(array('./Fixtures'), true);
 
