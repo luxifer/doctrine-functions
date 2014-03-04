@@ -9,7 +9,8 @@ namespace Luxifer\Tests\Fixtures\Entity;
 class Fake
 {
     /**
-     * @Id @Column(type="integer")
+     * @Id
+     * @Column(type="integer")
      * @GeneratedValue
      */
     public $id;
