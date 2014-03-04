@@ -2,13 +2,36 @@
 
 namespace Luxifer\Tests;
 
+use Doctrine\DBAL\DriverManager;
+use Doctrine\ORM\Tools\Setup;
+use Doctrine\Tests\Mocks\EntityManagerMock;
+
 abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 {
     protected $config;
 
-    protected function getEntityManager()
+    /** @var EntityManagerMock */
+    protected $em;
+
+    public function setUp()
     {
-        $this->config = new \Doctrine\ORM\Configuration();
+        $this->em = $this->getEntityManagerInstanceMock();
+    }
+
+    public function tearDown()
+    {
+        unset($this->em);
+    }
+
+    /**
+     * Just for internal use, could be overridden in child classes
+     * User $em property in case if you need EntityManager
+     *
+     * @return \Doctrine\ORM\EntityManager|\Doctrine\Tests\Mocks\EntityManagerMock
+     */
+    protected function getEntityManagerInstanceMock()
+    {
+        $this->config = Setup::createAnnotationMetadataConfiguration(array('./Fixtures'), true);
 
         $conn = array(
             'driverClass'  => 'Doctrine\Tests\Mocks\DriverMock',
@@ -17,7 +40,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
             'password'     => 'wayne'
         );
 
-        $conn = \Doctrine\DBAL\DriverManager::getConnection($conn, $this->config);
+        $conn = DriverManager::getConnection($conn, $this->config);
 
         $this->config->setProxyDir(__DIR__ . '/Proxies');
         $this->config->setProxyNamespace('Luxifer\Tests\Proxies');
@@ -35,7 +58,8 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config->addCustomDatetimeFunction('second', 'Luxifer\DQL\Datetime\Second');
         $this->config->addCustomDatetimeFunction('time', 'Luxifer\DQL\Datetime\Time');
         $this->config->addCustomDatetimeFunction('year', 'Luxifer\DQL\Datetime\Year');
+        $this->config->addCustomDatetimeFunction('convert_tz', 'Luxifer\DQL\Datetime\ConvertTZ');
 
-        return \Doctrine\Tests\Mocks\EntityManagerMock::create($conn, $this->config);
+        return EntityManagerMock::create($conn, $this->config);
     }
 }

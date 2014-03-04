@@ -8,10 +8,12 @@ class DateTest extends DQLFunctionTest
 
     public function testDate()
     {
-        $em = $this->_getEntityManager();
-        $query = $em->createQuery("SELECT DATE('2003-12-31 01:02:03') FROM ");
+        $query = $this->em->createQuery(sprintf("SELECT DATE('2003-12-31 01:02:03') FROM %s", self::FAKE_ENTITY));
 
-        $this->assertEquals($query->getSQL(), "SELECT DATE('2003-12-31 01:02:03') FROM ");
+        $this->assertEquals(
+            $query->getSQL(),
+            "SELECT DATE('2003-12-31 01:02:03') AS sclr0 FROM some_fake s0_"
+        );
     }
 
     /**
@@ -46,5 +48,15 @@ class DateTest extends DQLFunctionTest
             ['week'],
             ['day'],
         ];
+    }
+
+    public function testConvertTZ()
+    {
+        $query = $this->em->createQuery(sprintf("SELECT CONVERT_TZ(s0_.somedate, 'UTC', 'Europe/Kiev') FROM %s s0_", self::FAKE_ENTITY));
+
+        $this->assertEquals(
+            $query->getSQL(),
+            "SELECT CONVERT_TZ(s0_.somedate, 'UTC', 'Europe/Kiev') AS sclr0 FROM some_fake s0_"
+        );
     }
 }
