@@ -1,6 +1,8 @@
 Doctrine Functions
 ==================
 
+[![Build Status](https://travis-ci.org/luxifer/doctrine-functions.png?branch=master)](https://travis-ci.org/luxifer/doctrine-functions)
+
 This package contains doctrine functions, you can contribute by forking it and propose pull request with your own functions.
 List of available functions:
 
