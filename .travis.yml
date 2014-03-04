@@ -6,6 +6,6 @@ php:
 
 before_script:
   - composer self-update
-  - composer install --prefer-dist
+  - composer install
 
 script: phpunit --coverage-text -c phpunit.xml.dist
