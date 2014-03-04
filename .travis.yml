@@ -8,4 +8,9 @@ before_script:
   - composer self-update
   - composer install
 
-script: phpunit --coverage-text -c phpunit.xml.dist
+script:
+    - mkdir -p build/logs
+    - php vendor/bin/phpunit -c phpunit.xml.dist
+
+after_script:
+    - php vendor/bin/coveralls -v
