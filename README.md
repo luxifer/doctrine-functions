@@ -1,7 +1,7 @@
 Doctrine Functions
 ==================
 
-[![Build Status](https://travis-ci.org/luxifer/doctrine-functions.png?branch=master)](https://travis-ci.org/luxifer/doctrine-functions)
+[![Build Status](https://travis-ci.org/luxifer/doctrine-functions.png?branch=master)](https://travis-ci.org/luxifer/doctrine-functions) [![Coverage Status](https://coveralls.io/repos/luxifer/doctrine-functions/badge.png)](https://coveralls.io/r/luxifer/doctrine-functions)
 
 This package contains doctrine functions, you can contribute by forking it and propose pull request with your own functions.
 List of available functions:
