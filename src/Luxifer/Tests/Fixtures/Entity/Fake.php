@@ -5,6 +5,7 @@ namespace Luxifer\Tests\Fixtures\Entity;
 /**
  * @Entity
  * @Table(name="some_fake")
+ * @codeCoverageIgnore
  */
 class Fake
 {
