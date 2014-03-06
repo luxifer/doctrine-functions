@@ -28,66 +28,81 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>Doctrine Functions</h1>
+          <h1>
+<a name="doctrine-functions" class="anchor" href="#doctrine-functions"><span class="octicon octicon-link"></span></a>Doctrine Functions</h1>
+
+<p><a href="https://travis-ci.org/luxifer/doctrine-functions"><img src="https://travis-ci.org/luxifer/doctrine-functions.png?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/luxifer/doctrine-functions"><img src="https://coveralls.io/repos/luxifer/doctrine-functions/badge.png" alt="Coverage Status"></a> <a href="https://packagist.org/packages/luxifer/doctrine-functions"><img src="https://poser.pugx.org/luxifer/doctrine-functions/v/stable.png" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/luxifer/doctrine-functions"><img src="https://poser.pugx.org/luxifer/doctrine-functions/downloads.png" alt="Total Downloads"></a></p>
 
 <p>This package contains doctrine functions, you can contribute by forking it and propose pull request with your own functions.
-By defaults it add these:</p>
+List of available functions:</p>
 
 <ul>
 <li><code>DATE(expr)</code></li>
 <li><code>DATEDIFF(expr1, expr2)</code></li>
 <li><code>DAYOFWEEK(expr)</code></li>
+<li><code>WEEK(expr)</code></li>
+<li><code>DAY(expr)</code></li>
 <li><code>DAYOFMONTH(expr)</code></li>
 <li><code>DAYOFYEAR(expr)</code></li>
 <li><code>HOUR(expr)</code></li>
 <li><code>MINUTE(expr)</code></li>
 <li><code>MONTH(expr)</code></li>
+<li><code>QUARTER(expr)</code></li>
 <li><code>SECOND(expr)</code></li>
 <li><code>TIME(expr)</code></li>
 <li><code>YEAR(expr)</code></li>
-</ul><p>Edit this file in your pull request to add your function to the list.</p>
+<li>
+<code>CONVERT_TZ(expr, 'from_tz', 'to_tz')</code> (MySQL implementation ONLY)</li>
+</ul><p>Edit this file in your pull request to add your functions to the list.</p>
 
-<h2>Installation</h2>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Just add the package to your <code>composer.json</code></p>
 
-<div class="highlight"><pre><span class="p">{</span>
+<div class="highlight highlight-json"><pre><span class="p">{</span>
     <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">"luxifer/doctrine-functions"</span><span class="p">:</span> <span class="s2">"dev-master"</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
-<h2>Integration</h2>
+<h2>
+<a name="integration" class="anchor" href="#integration"><span class="octicon octicon-link"></span></a>Integration</h2>
 
-<h3>1) Doctrine Only</h3>
+<h3>
+<a name="1-doctrine-only" class="anchor" href="#1-doctrine-only"><span class="octicon octicon-link"></span></a>1) Doctrine Only</h3>
 
 <p>According to the <a href="http://docs.doctrine-project.org/en/2.0.x/cookbook/dql-user-defined-functions.html" title="Doctrine documentation">Doctrine documentation</a> you can register the functions in this package this way.</p>
 
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Doctrine\ORM\Configuration</span><span class="p">();</span>
 <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">addCustomDatetimeFunction</span><span class="p">(</span><span class="s1">'date'</span><span class="p">,</span> <span class="s1">'Luxifer\DQL\Datetime\Date'</span><span class="p">);</span>
 
 <span class="nv">$em</span> <span class="o">=</span> <span class="nx">EntityManager</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$dbParams</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 
-<h3>2) Using Symfony 2</h3>
+<h3>
+<a name="2-using-symfony-2" class="anchor" href="#2-using-symfony-2"><span class="octicon octicon-link"></span></a>2) Using Symfony 2</h3>
 
-<p>With symfony 2 you can register yout functions directly in the <code>config.yml</code> file.</p>
+<p>With Symfony 2 you can register your functions directly in the <code>config.yml</code> file.</p>
 
-<div class="highlight"><pre><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
+<div class="highlight highlight-yaml"><pre><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">orm</span><span class="p-Indicator">:</span>
         <span class="l-Scalar-Plain">entity_managers</span><span class="p-Indicator">:</span>
             <span class="l-Scalar-Plain">default</span><span class="p-Indicator">:</span>
                 <span class="l-Scalar-Plain">dql</span><span class="p-Indicator">:</span>
                     <span class="l-Scalar-Plain">datetime_functions</span><span class="p-Indicator">:</span>
-                        <span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Luxifer\DQL\Datetime\Date</span>
+                        <span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">Luxifer\DQL\Datetime\Date</span>
+                        <span class="l-Scalar-Plain">datediff</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Luxifer\DQL\Datetime\DateDiff</span>
+                        <span class="c1"># etc</span>
 </pre></div>
 
-<h2>TODO</h2>
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
 
 <ul>
-<li>Add test case</li>
+<li>Add test case using phpspec</li>
 </ul>
         </section>
 
@@ -103,7 +118,7 @@ By defaults it add these:</p>
 
           <p class="repo-owner"><a href="https://github.com/luxifer/doctrine-functions"></a> is maintained by <a href="https://github.com/luxifer">luxifer</a>.</p>
 
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
       </div>
     </div>
