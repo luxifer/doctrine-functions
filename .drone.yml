@@ -1,4 +1,5 @@
 image: bradrydzewski/php:5.5
 script:
     - curl -sS https://getcomposer.org/installer | php
+    - php composer.phar install
     - php vendor/bin/phpunit -c phpunit.xml.dist    
