@@ -4,7 +4,7 @@ namespace Luxifer\Tests;
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\Tools\Setup;
-use Doctrine\Tests\Mocks\EntityManagerMock;
+use Luxifer\Tests\Mocks\EntityManagerMock;
 
 abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 {
@@ -34,8 +34,8 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config = Setup::createAnnotationMetadataConfiguration(array('./Fixtures'), true);
 
         $conn = array(
-            'driverClass'  => 'Doctrine\Tests\Mocks\DriverMock',
-            'wrapperClass' => 'Doctrine\Tests\Mocks\ConnectionMock',
+            'driverClass'  => 'Luxifer\Tests\Mocks\DriverMock',
+            'wrapperClass' => 'Luxifer\Tests\Mocks\ConnectionMock',
             'user'         => 'john',
             'password'     => 'wayne'
         );
