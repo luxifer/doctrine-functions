@@ -81,4 +81,16 @@ class DateTest extends DQLFunctionTest
             "SELECT DATEDIFF(s0_.somedate, CURRENT_DATE) AS sclr0 FROM some_fake s0_"
         );
     }
+
+    public function testDateFormat()
+    {
+        $query = $this->em->createQuery(
+            sprintf("SELECT DATE_FORMAT(s0_.somedate, '%%Y %%M') FROM %s s0_", self::FAKE_ENTITY)
+        );
+
+        $this->assertEquals(
+            $query->getSQL(),
+            "SELECT DATE_FORMAT(s0_.somedate, '%Y %M') AS sclr0 FROM some_fake s0_"
+        );
+    }
 }

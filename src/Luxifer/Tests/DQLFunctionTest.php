@@ -59,6 +59,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config->addCustomDatetimeFunction('time', 'Luxifer\DQL\Datetime\Time');
         $this->config->addCustomDatetimeFunction('year', 'Luxifer\DQL\Datetime\Year');
         $this->config->addCustomDatetimeFunction('convert_tz', 'Luxifer\DQL\Datetime\ConvertTZ');
+        $this->config->addCustomDatetimeFunction('date_format', 'Luxifer\DQL\Datetime\DateFormat');
 
         return EntityManagerMock::create($conn, $this->config);
     }
