@@ -1,7 +1,7 @@
 Doctrine Functions
 ==================
 
-[![Build Status](http://drone.luxiferapp.com/github.com/luxifer/doctrine-functions/status.svg?branch=master)](http://drone.luxiferapp.com/github.com/luxifer/doctrine-functions) [![Coverage Status](https://coveralls.io/repos/luxifer/doctrine-functions/badge.png)](https://coveralls.io/r/luxifer/doctrine-functions) [![Latest Stable Version](https://poser.pugx.org/luxifer/doctrine-functions/v/stable.png)](https://packagist.org/packages/luxifer/doctrine-functions) [![Total Downloads](https://poser.pugx.org/luxifer/doctrine-functions/downloads.png)](https://packagist.org/packages/luxifer/doctrine-functions)
+[![Build Status](http://drone.luxiferapp.com/github.com/luxifer/doctrine-functions/status.svg?branch=master)](http://drone.luxiferapp.com/github.com/luxifer/doctrine-functions) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/luxifer/doctrine-functions/badges/quality-score.png?s=32406f6c6df4378a2f352bd062707d3c7a0216ea)](https://scrutinizer-ci.com/g/luxifer/doctrine-functions/) [![Latest Stable Version](https://poser.pugx.org/luxifer/doctrine-functions/v/stable.png)](https://packagist.org/packages/luxifer/doctrine-functions) [![Total Downloads](https://poser.pugx.org/luxifer/doctrine-functions/downloads.png)](https://packagist.org/packages/luxifer/doctrine-functions)
 
 This package contains doctrine functions, you can contribute by forking it and propose pull request with your own functions.
 List of available functions:
