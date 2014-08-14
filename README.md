@@ -22,6 +22,7 @@ List of available functions:
 * `YEAR(expr)`
 * `CONVERT_TZ(expr, 'from_tz', 'to_tz')` (MySQL implementation ONLY)
 * `DATE_FORMAT(expr, 'format')` (MySQL ONLY)
+* `CONCAT_WS(separator, str1, str2)` (MySQL)
 
 Edit this file in your pull request to add your functions to the list.
 
@@ -72,4 +73,4 @@ doctrine:
 TODO
 ----
 
-* Add test case using phpspec
+* Make `CONCAT_WS` extensive (unlimited params)
