@@ -14,3 +14,4 @@ tools:
     php_code_coverage: true
     php_mess_detector: true
     php_code_sniffer: true
+    external_code_coverage: true

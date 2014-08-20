@@ -22,7 +22,7 @@
             <directory>./src/Luxifer/</directory>
         </whitelist>
     </filter>
-    
+
     <groups>
         <exclude>
             <group>performance</group>
@@ -30,6 +30,6 @@
     </groups>
 
     <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-clover" target="coverage.clover"/>
     </logging>
 </phpunit>

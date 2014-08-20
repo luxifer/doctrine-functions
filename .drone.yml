@@ -1,5 +1,7 @@
-image: php5.5
+image: php5.3
 script:
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install --prefer-dist --no-interaction --no-progress
     - php vendor/bin/phpunit -c phpunit.xml.dist
+    - wget https://scrutinizer-ci.com/ocular.phar
+    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
