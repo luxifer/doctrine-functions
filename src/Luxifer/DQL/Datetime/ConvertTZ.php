@@ -34,11 +34,11 @@ class ConvertTZ extends FunctionNode
 
     public function getSql(SqlWalker $sqlWalker)
     {
-        $parts = [
+        $parts = array(
             $sqlWalker->walkArithmeticPrimary($this->dateExpression),
             $sqlWalker->walkStringPrimary($this->fromTZ),
             $sqlWalker->walkStringPrimary($this->toTZ)
-        ];
+        );
 
         return sprintf('CONVERT_TZ(%s)', implode(', ', $parts));
     }
