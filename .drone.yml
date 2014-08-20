@@ -1,4 +1,4 @@
-image: php5.3
+image: bradrydzewski/php:5.3
 script:
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install --prefer-dist --no-interaction --no-progress
