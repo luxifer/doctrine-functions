@@ -30,10 +30,10 @@ class DateFormat extends FunctionNode
 
     public function getSql(SqlWalker $sqlWalker)
     {
-        $parts = [
+        $parts = array(
             $sqlWalker->walkArithmeticPrimary($this->dateExpression),
             $sqlWalker->walkStringPrimary($this->dateFormat)
-        ];
+        );
 
         return sprintf('DATE_FORMAT(%s)', implode(', ', $parts));
     }
