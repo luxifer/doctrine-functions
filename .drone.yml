@@ -1,6 +1,7 @@
 image: bradrydzewski/php:5.3
 script:
     - curl -sS https://getcomposer.org/installer | php
+    - php composer.phar config -g github-oauth.github.com {{githubToken}}
     - php composer.phar install --prefer-dist --no-interaction --no-progress
     - php vendor/bin/phpunit -c phpunit.xml.dist
     - wget https://scrutinizer-ci.com/ocular.phar
