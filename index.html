@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -55,6 +55,8 @@ List of available functions:</p>
 <code>CONVERT_TZ(expr, 'from_tz', 'to_tz')</code> (MySQL implementation ONLY)</li>
 <li>
 <code>DATE_FORMAT(expr, 'format')</code> (MySQL ONLY)</li>
+<li>
+<code>CONCAT_WS(separator, str1, str2)</code> (MySQL)</li>
 </ul><p>Edit this file in your pull request to add your functions to the list.</p>
 
 <h2>
@@ -104,7 +106,7 @@ List of available functions:</p>
 <a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
 
 <ul>
-<li>Add test case using phpspec</li>
+<li>Make <code>CONCAT_WS</code> extensive (unlimited params)</li>
 </ul>
         </section>
 
