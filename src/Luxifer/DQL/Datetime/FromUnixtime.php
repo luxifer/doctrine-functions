@@ -1,6 +1,6 @@
 <?php
 
-namespace Luxifer\DQL\FromUnixtime;
+namespace Luxifer\DQL\Datetime;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;
