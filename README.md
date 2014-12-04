@@ -44,7 +44,7 @@ Integration
 
 ### 1) Doctrine Only
 
-According to the [Doctrine documentation](http://docs.doctrine-project.org/en/2.0.x/cookbook/dql-user-defined-functions.html "Doctrine documentation") you can register the functions in this package this way.
+According to the [Doctrine documentation](http://doctrine-orm.readthedocs.org/en/latest/cookbook/dql-user-defined-functions.html "Doctrine documentation") you can register the functions in this package this way.
 
 ```php
 <?php
