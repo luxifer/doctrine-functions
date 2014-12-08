@@ -21,7 +21,7 @@
       <div class="inner">
         <h1>Doctrine-functions</h1>
         <h2>Set of DQL functions for Doctrine 2</h2>
-        <a href="https://github.com/luxifer/doctrine-functions" class="button"><small>View project on</small>GitHub</a>
+        <a href="https://github.com/luxifer/doctrine-functions" class="button"><small>View project on</small> GitHub</a>
       </div>
     </header>
 
@@ -29,7 +29,7 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
-<a name="doctrine-functions" class="anchor" href="#doctrine-functions"><span class="octicon octicon-link"></span></a>Doctrine Functions</h1>
+<a id="doctrine-functions" class="anchor" href="#doctrine-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doctrine Functions</h1>
 
 <p><a href="http://drone.luxiferapp.com/github.com/luxifer/doctrine-functions"><img src="http://drone.luxiferapp.com/github.com/luxifer/doctrine-functions/status.svg?branch=master" alt="Build Status"></a> <a href="https://scrutinizer-ci.com/g/luxifer/doctrine-functions/"><img src="https://scrutinizer-ci.com/g/luxifer/doctrine-functions/badges/quality-score.png?s=32406f6c6df4378a2f352bd062707d3c7a0216ea" alt="Scrutinizer Code Quality"></a> <a href="https://scrutinizer-ci.com/g/luxifer/doctrine-functions/"><img src="https://scrutinizer-ci.com/g/luxifer/doctrine-functions/badges/coverage.png?s=6701d974c062e2c98ec2a556ba8ba4db76667e68" alt="Code Coverage"></a> <a href="https://packagist.org/packages/luxifer/doctrine-functions"><img src="https://poser.pugx.org/luxifer/doctrine-functions/v/stable.png" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/luxifer/doctrine-functions"><img src="https://poser.pugx.org/luxifer/doctrine-functions/downloads.png" alt="Total Downloads"></a></p>
 
@@ -57,57 +57,49 @@ List of available functions:</p>
 <code>DATE_FORMAT(expr, 'format')</code> (MySQL ONLY)</li>
 <li>
 <code>CONCAT_WS(separator, str1, str2)</code> (MySQL)</li>
-</ul><p>Edit this file in your pull request to add your functions to the list.</p>
+</ul>
+
+<p>Edit this file in your pull request to add your functions to the list.</p>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Just add the package to your <code>composer.json</code></p>
 
-<div class="highlight highlight-json"><pre><span class="p">{</span>
-    <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"luxifer/doctrine-functions"</span><span class="p">:</span> <span class="s2">"dev-master"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-json"><pre>{
+    <span class="pl-s1"><span class="pl-pds">"</span>require<span class="pl-pds">"</span></span>: {
+        <span class="pl-s1"><span class="pl-pds">"</span>luxifer/doctrine-functions<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>dev-master<span class="pl-pds">"</span></span>
+    }
+}</pre></div>
 
 <h2>
-<a name="integration" class="anchor" href="#integration"><span class="octicon octicon-link"></span></a>Integration</h2>
+<a id="integration" class="anchor" href="#integration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integration</h2>
 
 <h3>
-<a name="1-doctrine-only" class="anchor" href="#1-doctrine-only"><span class="octicon octicon-link"></span></a>1) Doctrine Only</h3>
+<a id="1-doctrine-only" class="anchor" href="#1-doctrine-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>1) Doctrine Only</h3>
 
-<p>According to the <a href="http://docs.doctrine-project.org/en/2.0.x/cookbook/dql-user-defined-functions.html" title="Doctrine documentation">Doctrine documentation</a> you can register the functions in this package this way.</p>
+<p>According to the <a href="http://doctrine-orm.readthedocs.org/en/latest/cookbook/dql-user-defined-functions.html" title="Doctrine documentation">Doctrine documentation</a> you can register the functions in this package this way.</p>
 
-<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Doctrine\ORM\Configuration</span><span class="p">();</span>
-<span class="nv">$config</span><span class="o">-&gt;</span><span class="na">addCustomDatetimeFunction</span><span class="p">(</span><span class="s1">'date'</span><span class="p">,</span> <span class="s1">'Luxifer\DQL\Datetime\Date'</span><span class="p">);</span>
-
-<span class="nv">$em</span> <span class="o">=</span> <span class="nx">EntityManager</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$dbParams</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$config</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">\Doctrine\ORM\</span><span class="pl-s3">Configuration</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$config</span><span class="pl-k">-&gt;</span>addCustomDatetimeFunction(<span class="pl-s1"><span class="pl-pds">'</span>date<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>Luxifer\DQL\Datetime\Date<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$em</span> <span class="pl-k">=</span> <span class="pl-s3">EntityManager</span><span class="pl-k">::</span>create(<span class="pl-vo">$dbParams</span>, <span class="pl-vo">$config</span>);</span></pre></div>
 
 <h3>
-<a name="2-using-symfony-2" class="anchor" href="#2-using-symfony-2"><span class="octicon octicon-link"></span></a>2) Using Symfony 2</h3>
+<a id="2-using-symfony-2" class="anchor" href="#2-using-symfony-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>2) Using Symfony 2</h3>
 
 <p>With Symfony 2 you can register your functions directly in the <code>config.yml</code> file.</p>
 
-<div class="highlight highlight-yaml"><pre><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">orm</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">entity_managers</span><span class="p-Indicator">:</span>
-            <span class="l-Scalar-Plain">default</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">dql</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">datetime_functions</span><span class="p-Indicator">:</span>
-                        <span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">Luxifer\DQL\Datetime\Date</span>
-                        <span class="l-Scalar-Plain">datediff</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Luxifer\DQL\Datetime\DateDiff</span>
-                        <span class="c1"># etc</span>
-</pre></div>
-
-<h2>
-<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
-
-<ul>
-<li>Make <code>CONCAT_WS</code> extensive (unlimited params)</li>
-</ul>
+<div class="highlight highlight-yaml"><pre><span class="pl-s1"><span class="pl-ent">doctrine:</span><span class="pl-s1"></span></span>
+    <span class="pl-s1"><span class="pl-ent">orm:</span><span class="pl-s1"></span></span>
+        <span class="pl-s1"><span class="pl-ent">entity_managers:</span><span class="pl-s1"></span></span>
+            <span class="pl-s1"><span class="pl-ent">default:</span><span class="pl-s1"></span></span>
+                <span class="pl-s1"><span class="pl-ent">dql:</span><span class="pl-s1"></span></span>
+                    <span class="pl-s1"><span class="pl-ent">datetime_functions:</span><span class="pl-s1"></span></span>
+                        <span class="pl-s1"><span class="pl-ent">date:</span>     <span class="pl-s1">Luxifer\DQL\Datetime\Date</span></span>
+                        <span class="pl-s1"><span class="pl-ent">datediff:</span> <span class="pl-s1">Luxifer\DQL\Datetime\DateDiff</span></span>
+                        <span class="pl-c"># etc</span></pre></div>
         </section>
 
         <aside id="sidebar">
