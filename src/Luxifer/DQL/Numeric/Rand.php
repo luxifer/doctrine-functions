@@ -1,6 +1,6 @@
 <?php
 
-namespace Luxifer\DQL\Misc;
+namespace Luxifer\DQL\Numeric;
 
 use Doctrine\ORM\Query\Lexer;
 use Doctrine\ORM\Query\Parser;
