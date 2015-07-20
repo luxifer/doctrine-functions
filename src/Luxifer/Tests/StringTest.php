@@ -18,8 +18,8 @@ class StringTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            sprintf("SELECT CONCAT_WS(%s) AS sclr0 FROM some_fake s0_", $sql)
+            sprintf("SELECT CONCAT_WS(%s) AS sclr_0 FROM some_fake s0_", $sql),
+            $query->getSQL()
         );
     }
 

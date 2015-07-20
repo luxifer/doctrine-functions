@@ -13,8 +13,8 @@ class DateTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            "SELECT DATE('2003-12-31 01:02:03') AS sclr0 FROM some_fake s0_"
+            "SELECT DATE('2003-12-31 01:02:03') AS sclr_0 FROM some_fake s0_",
+            $query->getSQL()
         );
     }
 
@@ -30,8 +30,8 @@ class DateTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            sprintf("SELECT %s(s0_.somedate) AS sclr0 FROM some_fake s0_", strtoupper($part))
+            sprintf("SELECT %s(s0_.somedate) AS sclr_0 FROM some_fake s0_", strtoupper($part)),
+            $query->getSQL()
         );
     }
 
@@ -65,8 +65,8 @@ class DateTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            "SELECT CONVERT_TZ(s0_.somedate, 'UTC', 'Europe/Kiev') AS sclr0 FROM some_fake s0_"
+            "SELECT CONVERT_TZ(s0_.somedate, 'UTC', 'Europe/Kiev') AS sclr_0 FROM some_fake s0_",
+            $query->getSQL()
         );
     }
 
@@ -77,8 +77,8 @@ class DateTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            "SELECT DATEDIFF(s0_.somedate, CURRENT_DATE) AS sclr0 FROM some_fake s0_"
+            "SELECT DATEDIFF(s0_.somedate, CURRENT_DATE) AS sclr_0 FROM some_fake s0_",
+            $query->getSQL()
         );
     }
 
@@ -89,8 +89,8 @@ class DateTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            "SELECT DATE_FORMAT(s0_.somedate, '%Y %M') AS sclr0 FROM some_fake s0_"
+            "SELECT DATE_FORMAT(s0_.somedate, '%Y %M') AS sclr_0 FROM some_fake s0_",
+            $query->getSQL()
         );
     }
 }
