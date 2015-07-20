@@ -7,7 +7,7 @@ php:
   - 5.6
   - hhvm
 install:
-  - composer install --no-scripts --no-interaction
+  - composer install --no-scripts --no-interaction --prefer-source
 script:
   - php vendor/bin/phpunit -c phpunit.xml.dist
 after_script:
