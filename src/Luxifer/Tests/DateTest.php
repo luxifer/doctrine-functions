@@ -41,21 +41,21 @@ class DateTest extends DQLFunctionTest
      */
     public function partsProvider()
     {
-        return [
-            ['date'],
-            ['month'],
-            ['dayofmonth'],
-            ['dayofweek'],
-            ['dayofyear'],
-            ['quarter'],
-            ['week'],
-            ['day'],
-            ['time'],
-            ['year'],
-            ['minute'],
-            ['hour'],
-            ['second']
-        ];
+        return array(
+            array('date'),
+            array('month'),
+            array('dayofmonth'),
+            array('dayofweek'),
+            array('dayofyear'),
+            array('quarter'),
+            array('week'),
+            array('day'),
+            array('time'),
+            array('year'),
+            array('minute'),
+            array('hour'),
+            array('second'),
+        );
     }
 
     public function testConvertTZ()
