@@ -2,42 +2,13 @@
 
 namespace Luxifer\Tests\Mocks;
 
-/**
- * Mock class for Connection.
- */
 class ConnectionMock extends \Doctrine\DBAL\Connection
 {
-    /**
-     * @var mixed
-     */
     private $_fetchOneResult;
-
-    /**
-     * @var DatabasePlatformMock
-     */
     private $_platformMock;
-
-    /**
-     * @var int
-     */
     private $_lastInsertId = 0;
-
-    /**
-     * @var array
-     */
     private $_inserts = array();
 
-    /**
-     * @var array
-     */
-    private $_executeUpdates = array();
-
-    /**
-     * @param array                              $params
-     * @param \Doctrine\DBAL\Driver              $driver
-     * @param \Doctrine\DBAL\Configuration|null  $config
-     * @param \Doctrine\Common\EventManager|null $eventManager
-     */
     public function __construct(array $params, $driver, $config = null, $eventManager = null)
     {
         $this->_platformMock = new DatabasePlatformMock();
@@ -49,7 +20,7 @@ class ConnectionMock extends \Doctrine\DBAL\Connection
     }
 
     /**
-     * {@inheritdoc}
+     * @override
      */
     public function getDatabasePlatform()
     {
@@ -57,7 +28,7 @@ class ConnectionMock extends \Doctrine\DBAL\Connection
     }
 
     /**
-     * {@inheritdoc}
+     * @override
      */
     public function insert($tableName, array $data, array $types = array())
     {
@@ -65,15 +36,7 @@ class ConnectionMock extends \Doctrine\DBAL\Connection
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function executeUpdate($query, array $params = array(), array $types = array())
-    {
-        $this->_executeUpdates[] = array('query' => $query, 'params' => $params, 'types' => $types);
-    }
-
-    /**
-     * {@inheritdoc}
+     * @override
      */
     public function lastInsertId($seqName = null)
     {
@@ -81,15 +44,15 @@ class ConnectionMock extends \Doctrine\DBAL\Connection
     }
 
     /**
-     * {@inheritdoc}
+     * @override
      */
-    public function fetchColumn($statement, array $params = array(), $column = 0, array $types = array())
+    public function fetchColumn($statement, array $params = array(), $colnum = 0, array $types = array())
     {
         return $this->_fetchOneResult;
     }
 
     /**
-     * {@inheritdoc}
+     * @override
      */
     public function quote($input, $type = null)
     {
@@ -101,55 +64,21 @@ class ConnectionMock extends \Doctrine\DBAL\Connection
 
     /* Mock API */
 
-    /**
-     * @param mixed $fetchOneResult
-     *
-     * @return void
-     */
     public function setFetchOneResult($fetchOneResult)
     {
         $this->_fetchOneResult = $fetchOneResult;
     }
 
-    /**
-     * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
-     *
-     * @return void
-     */
-    public function setDatabasePlatform($platform)
-    {
-        $this->_platformMock = $platform;
-    }
-
-    /**
-     * @param int $id
-     *
-     * @return void
-     */
     public function setLastInsertId($id)
     {
         $this->_lastInsertId = $id;
     }
 
-    /**
-     * @return array
-     */
     public function getInserts()
     {
         return $this->_inserts;
     }
 
-    /**
-     * @return array
-     */
-    public function getExecuteUpdates()
-    {
-        return $this->_executeUpdates;
-    }
-
-    /**
-     * @return void
-     */
     public function reset()
     {
         $this->_inserts = array();
