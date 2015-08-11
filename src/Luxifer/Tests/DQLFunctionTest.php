@@ -5,6 +5,7 @@ namespace Luxifer\Tests;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\Tools\Setup;
 use Luxifer\Tests\Mocks\EntityManagerMock;
+use Luxifer\Tests\Mocks\QuotingStrategy;
 
 abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,6 +33,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
     protected function getEntityManagerInstanceMock()
     {
         $this->config = Setup::createAnnotationMetadataConfiguration(array('./Fixtures'), true);
+        $this->config->setQuoteStrategy(new QuotingStrategy());
 
         $conn = array(
             'driverClass'  => 'Luxifer\Tests\Mocks\DriverMock',
