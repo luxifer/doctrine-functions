@@ -89,7 +89,7 @@ class EntityManagerMock extends \Doctrine\ORM\EntityManager
         if (null === $config) {
             $config = new \Doctrine\ORM\Configuration();
             $config->setProxyDir(__DIR__ . '/../Proxies');
-            $config->setProxyNamespace('Doctrine\Tests\Proxies');
+            $config->setProxyNamespace('Luxifer\Tests\Proxies');
             $config->setMetadataDriverImpl($config->newDefaultAnnotationDriver(array(), true));
         }
         if (null === $eventManager) {
