@@ -18,8 +18,8 @@ class StringTest extends DQLFunctionTest
         );
 
         $this->assertEquals(
-            $query->getSQL(),
-            sprintf("SELECT CONCAT_WS(%s) AS sclr0 FROM some_fake s0_", $sql)
+            sprintf("SELECT CONCAT_WS(%s) AS sclr_0 FROM some_fake s0_", $sql),
+            $query->getSQL()
         );
     }
 
@@ -45,11 +45,11 @@ class StringTest extends DQLFunctionTest
      */
     public function partsProvider()
     {
-        return [
-            ["'', '1', '2'", "'', '1', '2'"],
-            ["' ', '1', '2', '3'", "' ', '1', '2', '3'"],
-            ["', ', '1', '2', '3', '4'", "', ', '1', '2', '3', '4'"],
-            ["' ', e.id, '2'", "' ', s0_.id, '2'"],
-        ];
+        return array(
+            array("'', '1', '2'", "'', '1', '2'"),
+            array("' ', '1', '2', '3'", "' ', '1', '2', '3'"),
+            array("', ', '1', '2', '3', '4'", "', ', '1', '2', '3', '4'"),
+            array("' ', e.id, '2'", "' ', s0_.id, '2'"),
+        );
     }
 }

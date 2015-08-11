@@ -1,8 +1,0 @@
-image: bradrydzewski/php:5.3
-script:
-    - curl -sS https://getcomposer.org/installer | php
-    - php composer.phar config -g github-oauth.github.com {{githubToken}}
-    - php composer.phar install --prefer-dist --no-interaction --no-progress
-    - php vendor/bin/phpunit -c phpunit.xml.dist
-    - wget -q https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
