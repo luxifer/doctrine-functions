@@ -4,8 +4,6 @@ namespace Luxifer\Tests;
 
 class StringTest extends DQLFunctionTest
 {
-    const FAKE_ENTITY = 'Luxifer\Tests\Fixtures\Entity\Fake';
-
     /**
      * Test CONCAT_WS function
      *
@@ -19,6 +17,21 @@ class StringTest extends DQLFunctionTest
 
         $this->assertEquals(
             sprintf("SELECT CONCAT_WS(%s) AS sclr_0 FROM some_fake s0_", $sql),
+            $query->getSQL()
+        );
+    }
+
+    /**
+     * Test MD5 function
+     */
+    public function testMd5()
+    {
+        $query = $this->em->createQuery(
+            sprintf("SELECT MD5(s0_.somedate) FROM %s as s0_", self::FAKE_ENTITY)
+        );
+
+        $this->assertEquals(
+            "SELECT MD5(s0_.somedate) AS sclr_0 FROM some_fake s0_",
             $query->getSQL()
         );
     }
