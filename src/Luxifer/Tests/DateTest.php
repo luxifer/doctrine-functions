@@ -4,20 +4,6 @@ namespace Luxifer\Tests;
 
 class DateTest extends DQLFunctionTest
 {
-    const FAKE_ENTITY = 'Luxifer\Tests\Fixtures\Entity\Fake';
-
-    public function testDate()
-    {
-        $query = $this->em->createQuery(
-            sprintf("SELECT DATE('2003-12-31 01:02:03') FROM %s", self::FAKE_ENTITY)
-        );
-
-        $this->assertEquals(
-            "SELECT DATE('2003-12-31 01:02:03') AS sclr_0 FROM some_fake s0_",
-            $query->getSQL()
-        );
-    }
-
     /**
      * Test that Doctrine able to parse DQL without exceptions
      *
