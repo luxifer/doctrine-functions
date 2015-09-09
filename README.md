@@ -22,7 +22,8 @@ List of available functions:
 * `YEAR(expr)`
 * `CONVERT_TZ(expr, 'from_tz', 'to_tz')` (MySQL)
 * `DATE_FORMAT(expr, 'format')` (MySQL)
-* `CONCAT_WS(separator, str1, str2)` (MySQL)
+* `CONCAT_WS(separator, str1, str2, ...)` (MySQL)
+* `RAND()` (MySQL)
 * `MD5(expr)` (MySQL, Postgres)
 
 Edit this file in your pull request to add your functions to the list.
@@ -70,8 +71,3 @@ doctrine:
                         datediff: Luxifer\DQL\Datetime\DateDiff
                         # etc
 ```
-
-TODO
-----
-
-* Make `CONCAT_WS` extensive (unlimited params)
