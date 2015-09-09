@@ -9,6 +9,8 @@ use Luxifer\Tests\Mocks\QuotingStrategy;
 
 abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
 {
+    const FAKE_ENTITY = 'Luxifer\Tests\Fixtures\Entity\Fake';
+
     protected $config;
 
     /** @var EntityManagerMock */
@@ -62,7 +64,9 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config->addCustomDatetimeFunction('year', 'Luxifer\DQL\Datetime\Year');
         $this->config->addCustomDatetimeFunction('convert_tz', 'Luxifer\DQL\Datetime\ConvertTZ');
         $this->config->addCustomDatetimeFunction('date_format', 'Luxifer\DQL\Datetime\DateFormat');
-        $this->config->addCustomDatetimeFunction('concat_ws', 'Luxifer\DQL\String\ConcatWs');
+        $this->config->addCustomStringFunction('concat_ws', 'Luxifer\DQL\String\ConcatWs');
+        $this->config->addCustomStringFunction('md5', 'Luxifer\DQL\String\Md5');
+        $this->config->addCustomNumericFunction('rand', 'Luxifer\DQL\Numeric\Rand');
 
         return EntityManagerMock::create($conn, $this->config);
     }
