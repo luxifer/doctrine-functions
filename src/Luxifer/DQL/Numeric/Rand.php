@@ -7,7 +7,7 @@ use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\SqlWalker;
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 
-class RandFunction extends FunctionNode
+class Rand extends FunctionNode
 {
     public function parse(Parser $parser)
     {
