@@ -20,9 +20,10 @@ List of available functions:
 * `SECOND(expr)`
 * `TIME(expr)`
 * `YEAR(expr)`
-* `CONVERT_TZ(expr, 'from_tz', 'to_tz')` (MySQL implementation ONLY)
-* `DATE_FORMAT(expr, 'format')` (MySQL ONLY)
+* `CONVERT_TZ(expr, 'from_tz', 'to_tz')` (MySQL)
+* `DATE_FORMAT(expr, 'format')` (MySQL)
 * `CONCAT_WS(separator, str1, str2)` (MySQL)
+* `MD5(expr)` (MySQL, Postgres)
 
 Edit this file in your pull request to add your functions to the list.
 
