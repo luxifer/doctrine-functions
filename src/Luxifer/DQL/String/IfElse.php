@@ -18,8 +18,6 @@ class IfElse extends FunctionNode
 
     public function parse(Parser $parser)
     {
-        $lexer = $parser->getLexer();
-
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
         $this->condition = $parser->ConditionalExpression();
