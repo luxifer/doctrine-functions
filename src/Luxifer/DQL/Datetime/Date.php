@@ -27,6 +27,6 @@ class Date extends FunctionNode
     {
         return 'DATE(' .
             $this->dateExpression->dispatch($sqlWalker) .
-        ')'; 
+        ')';
     }
 }
