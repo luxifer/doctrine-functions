@@ -66,6 +66,7 @@ abstract class DQLFunctionTest extends \PHPUnit_Framework_TestCase
         $this->config->addCustomDatetimeFunction('date_format', 'Luxifer\DQL\Datetime\DateFormat');
         $this->config->addCustomStringFunction('concat_ws', 'Luxifer\DQL\String\ConcatWs');
         $this->config->addCustomStringFunction('md5', 'Luxifer\DQL\String\Md5');
+        $this->config->addCustomStringFunction('if', 'Luxifer\DQL\String\IfElse');
         $this->config->addCustomNumericFunction('rand', 'Luxifer\DQL\Numeric\Rand');
 
         return EntityManagerMock::create($conn, $this->config);
