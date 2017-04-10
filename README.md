@@ -25,6 +25,7 @@ List of available functions:
 * `CONCAT_WS(separator, str1, str2, ...)` (MySQL)
 * `RAND()` (MySQL)
 * `MD5(expr)` (MySQL, Postgres)
+* `FROM_UNIXTIME(expr1, expr2)` (MySQL)
 
 Edit this file in your pull request to add your functions to the list.
 
