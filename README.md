@@ -29,6 +29,11 @@ List of available functions:
 
 Edit this file in your pull request to add your functions to the list.
 
+Requirements
+------------
+
+This library is expected to work with PHP >= 5.3, but you should consider to upgrade to PHP >= 7.0. To contribute to this library you must have PHP >= 7.0 to run the test suite.
+
 Installation
 ------------
 
@@ -37,7 +42,7 @@ Just add the package to your `composer.json`
 ```json
 {
     "require": {
-        "luxifer/doctrine-functions": "dev-master"
+        "luxifer/doctrine-functions": "^1.5"
     }
 }
 ```
