@@ -7,7 +7,7 @@ php:
   - 5.6
   - 7.0
   - 7.1
-  - hhvm
+  - 7.2
 install:
   - composer install --no-scripts --no-interaction --prefer-source
 script:
@@ -17,4 +17,4 @@ after_script:
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 matrix:
   allow_failures:
-    - php: 7.1
+    - php: 7.2
