@@ -16,7 +16,7 @@ class IfElse extends FunctionNode
     public $isTrueStatement;
     public $isFalseStatement;
 
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
@@ -31,7 +31,7 @@ class IfElse extends FunctionNode
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return 'IF(' .
             $this->condition->dispatch($sqlWalker) . ', ' .
