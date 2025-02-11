@@ -14,7 +14,7 @@ class Quarter extends FunctionNode
 {
     public $dateExpression;
 
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): string
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
@@ -22,7 +22,7 @@ class Quarter extends FunctionNode
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): void
     {
         return 'QUARTER(' .
             $this->dateExpression->dispatch($sqlWalker) .
