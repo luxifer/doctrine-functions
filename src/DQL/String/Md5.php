@@ -14,7 +14,7 @@ class Md5 extends FunctionNode
 {
     public $md5Expression;
 
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
@@ -22,7 +22,7 @@ class Md5 extends FunctionNode
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return 'MD5(' .
             $this->md5Expression->dispatch($sqlWalker) .
