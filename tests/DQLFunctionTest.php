@@ -3,7 +3,7 @@
 namespace Luxifer\Tests;
 
 use Doctrine\DBAL\DriverManager;
-use Doctrine\ORM\Tools\Setup;
+use Doctrine\ORM\ORMSetup;
 use Luxifer\Tests\Mocks\EntityManagerMock;
 use Luxifer\Tests\Mocks\QuotingStrategy;
 use PHPUnit\Framework\TestCase;
@@ -35,7 +35,7 @@ abstract class DQLFunctionTest extends TestCase
      */
     protected function getEntityManagerInstanceMock()
     {
-        $this->config = Setup::createAnnotationMetadataConfiguration(array('./Fixtures'), true);
+        $this->config = ORMSetup::createAttributeMetadataConfiguration(array('./Fixtures'), true);
         $this->config->setQuoteStrategy(new QuotingStrategy());
 
         $conn = array(

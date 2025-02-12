@@ -25,7 +25,7 @@ class StringTest extends DQLFunctionTest
      * Data provider
      * @codeCoverageIgnore
      */
-    public function concatProvider()
+    public static function concatProvider()
     {
         return array(
             array("'', '1', '2'", "'', '1', '2'"),
@@ -86,7 +86,7 @@ class StringTest extends DQLFunctionTest
     /**
      * @codeCoverageIgnore
      */
-    public function ifProvider()
+    public static function ifProvider()
     {
         return array(
             array('1 > 2, e.id, e.somedate', '1 > 2, s0_.id, s0_.somedate'),

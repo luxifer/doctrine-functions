@@ -25,7 +25,7 @@ class DateTest extends DQLFunctionTest
      * Data provider
      * @codeCoverageIgnore
      */
-    public function partsProvider()
+    public static function partsProvider()
     {
         return array(
             array('date'),
