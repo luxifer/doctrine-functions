@@ -3,7 +3,11 @@
     "type": "library",
     "description": "Doctrine DQL Functions for Mysql",
     "homepage": "http://luxifer.github.io/doctrine-functions/",
-    "keywords": ["database", "mysql", "dql"],
+    "keywords": [
+        "database",
+        "mysql",
+        "dql"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +19,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "doctrine/orm": ">=3.0"
+        "doctrine/orm": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
@@ -25,10 +29,10 @@
             "Luxifer\\": "src/"
         }
     },
-     "autoload-dev": {
-         "psr-4": {
-             "Luxifer\\Tests\\": "tests/"
-         }
-     },
+    "autoload-dev": {
+        "psr-4": {
+            "Luxifer\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "stable"
 }
