@@ -4,6 +4,8 @@ namespace Luxifer\Tests\Mocks;
 
 use Doctrine\DBAL\Driver;
 use Doctrine\DBAL\Driver\Connection as DriverConnection;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
+use SensitiveParameter;
 
 class DriverMock implements Driver
 {
@@ -33,7 +35,7 @@ class DriverMock implements Driver
     /**
      * @override
      */
-    public function getDatabasePlatform()
+    public getDatabasePlatform(ServerVersionProvider $versionProvider): AbstractPlatform
     {
         if ( ! $this->_platformMock) {
             $this->_platformMock = new DatabasePlatformMock;
