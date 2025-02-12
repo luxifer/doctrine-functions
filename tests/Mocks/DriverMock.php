@@ -35,7 +35,7 @@ class DriverMock implements Driver
     /**
      * @override
      */
-    public getDatabasePlatform(ServerVersionProvider $versionProvider): AbstractPlatform
+    public function getDatabasePlatform(ServerVersionProvider $versionProvider): AbstractPlatform
     {
         if ( ! $this->_platformMock) {
             $this->_platformMock = new DatabasePlatformMock;
