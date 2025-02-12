@@ -17,12 +17,12 @@ abstract class DQLFunctionTest extends TestCase
     /** @var EntityManagerMock */
     protected $em;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->em = $this->getEntityManagerInstanceMock();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->em);
     }
