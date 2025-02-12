@@ -14,7 +14,7 @@ class ConcatWs extends FunctionNode
 {
     public $strings = array();
 
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): void
     {
         $lexer = $parser->getLexer();
 
@@ -37,7 +37,7 @@ class ConcatWs extends FunctionNode
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         $parts = array_map(array($sqlWalker, 'walkStringPrimary'), $this->strings);
 
