@@ -2,6 +2,7 @@
 
 namespace Luxifer\Tests\Mocks;
 
+use Doctrine\DBAL\Driver\API\ExceptionConverter;
 use Doctrine\DBAL\Driver;
 use Doctrine\DBAL\Driver\Connection as DriverConnection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -53,6 +54,14 @@ class DriverMock implements Driver
         } else {
             return $this->_schemaManagerMock;
         }
+    }
+
+    /**
+     * @override
+     */
+    public function getExceptionConverter(): ExceptionConverter
+    {
+        return new ExceptionConverterMock();
     }
 
     /* MOCK API */
