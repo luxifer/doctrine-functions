@@ -2,14 +2,19 @@
 
 namespace Luxifer\Tests\Mocks;
 
+use Doctrine\DBAL\Driver;
+use Doctrine\DBAL\Driver\Connection as DriverConnection;
 
-class DriverMock implements \Doctrine\DBAL\Driver
+class DriverMock implements Driver
 {
     private $_platformMock;
 
     private $_schemaManagerMock;
 
-    public function connect(array $params, $username = null, $password = null, array $driverOptions = array())
+    public function connect(
+        #[SensitiveParameter]
+        array $params,
+    ): DriverConnection
     {
         return new DriverConnectionMock();
     }
