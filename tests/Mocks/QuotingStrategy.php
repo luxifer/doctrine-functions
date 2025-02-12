@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 
 class QuotingStrategy extends DefaultQuoteStrategy
 {
-    public function getColumnAlias(string $columnName, int $counter, Doctrine\DBAL\Platforms\AbstractPlatform $platform, ?Doctrine\ORM\Mapping\ClassMetadata $class = null): string
+    public function getColumnAlias(string $columnName, int $counter, AbstractPlatform $platform, ClassMetadata|null $class = null): string
     {
         // 1 ) Concatenate column name and counter
         // 2 ) Trim the column alias to the maximum identifier length of the platform.
